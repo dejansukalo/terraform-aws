@@ -1,0 +1,7 @@
+vpc_cidr_block = "10.0.0.0/16"
+env_prefix = "dev"
+subnet_cidr_block = "10.0.10.0/24"
+avail_zone = "eu-central-1a"
+my_ip= "81.93.84.66/32"
+instance_type = "t2.micro"
+image_name = "amzn2-ami-hvm-*-x86_64-gp2"
