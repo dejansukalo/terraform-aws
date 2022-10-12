@@ -19,7 +19,7 @@ pipeline {
             withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID',credentialsId:'927112977430',secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
                 dir('terraform') {
                     sh "terraform init"
-                    sh "terraform apply -auto-approve"
+                    sh "terraform destroy -auto-approve"
                 }
             }
         }
