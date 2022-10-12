@@ -82,7 +82,7 @@ resource "aws_instance" "myapp-server" {
   vpc_security_group_ids = [aws_security_group.myapp-sg.id]
   availability_zone = var.avail_zone
   associate_public_ip_address = true
-  key_name = "server-ssh-key"
+  key_name = "myapp-key-pair"
 
   user_data = file("entry-script.sh")
 
