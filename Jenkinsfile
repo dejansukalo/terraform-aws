@@ -19,10 +19,9 @@ pipeline {
             withCredentials([aws(accessKeyVariable:'AWS_ACCESS_KEY_ID',credentialsId:'927112977430',secretKeyVariable:'AWS_SECRET_ACCESS_KEY')]) {
                 dir('terraform') {
                     sh "terraform init"
-                    sh "terraform destroy -auto-approve"
+                    sh "terraform apply -auto-approve"
                     EC2_PUBLIC_IP = sh(
                         script: "terraform output ec2_public_ip"
-                        returnStdout: true
                     ).trim()
                 }
             }
@@ -32,6 +31,7 @@ pipeline {
         steps {
             script {
                 sleep(time: 90, unit: "SECONDS")
+
             }
         }
     }
