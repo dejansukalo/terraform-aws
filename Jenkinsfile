@@ -31,7 +31,7 @@ pipeline {
     stage ('deploy') {
         steps {
             script {
-            sleep(time: 90, unit: "SECONDS")
+                sleep(time: 90, unit: "SECONDS")
             }
         }
     }
